@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Promociones Llanterama</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#001529">
@@ -19,30 +21,31 @@ body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);
 .track::-webkit-scrollbar{display:none}
 .screen{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;display:flex;flex-direction:column;
   padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));padding-block:28px 96px}
-.inner{max-width:520px;width:100%;margin:auto;display:flex;flex-direction:column;gap:18px;position:relative;z-index:2}
+.inner{max-width:560px;width:100%;margin:auto;display:flex;flex-direction:column;gap:clamp(18px,3.5vh,30px);position:relative;z-index:2}
 .eyebrow{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow)}
 h1,h2{font-family:var(--display);margin:0;line-height:.98;text-wrap:balance}
-h2{font-size:clamp(34px,9vw,56px)}
-p{margin:0;line-height:1.5}
-.lead{font-size:17px;color:var(--muted);max-width:34ch}
+h2{font-size:clamp(40px,11vw,64px)}
+p{margin:0;line-height:1.45}
+.lead{font-size:clamp(18px,5vw,22px);color:var(--muted);max-width:30ch}
+.eyebrow{font-size:clamp(14px,3.8vw,16px)!important}
 
 /* Pantalla 1: bienvenida */
 .s-welcome{background:radial-gradient(120% 70% at 50% 0%,var(--navy3),var(--navy) 65%)}
 .s-welcome .inner{align-items:center;text-align:center;gap:22px}
-.tire{width:118px;height:118px;border-radius:50%;background:repeating-conic-gradient(var(--yellow) 0 10deg,var(--navy2) 10deg 20deg);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(250,204,21,.12),0 20px 60px rgba(0,0,0,.5);animation:roll 1.2s cubic-bezier(.2,.8,.2,1) both}
-.tire::after{content:"L";width:62px;height:62px;border-radius:50%;background:var(--navy);color:var(--yellow);font-family:var(--display);font-size:34px;display:grid;place-items:center}
+.tire{width:clamp(140px,42vw,190px);height:clamp(140px,42vw,190px);border-radius:50%;background:repeating-conic-gradient(var(--yellow) 0 10deg,var(--navy2) 10deg 20deg);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(250,204,21,.12),0 20px 60px rgba(0,0,0,.5);animation:roll 1.2s cubic-bezier(.2,.8,.2,1) both}
+.tire::after{content:"L";width:52%;height:52%;border-radius:50%;background:var(--navy);color:var(--yellow);font-family:var(--display);font-size:clamp(40px,12vw,56px);display:grid;place-items:center}
 @keyframes roll{from{transform:translateX(-60vw) rotate(-540deg)}to{transform:none}}
-.brand{font-family:var(--display);font-size:clamp(26px,7vw,36px);letter-spacing:.02em;line-height:1}
+.brand{font-family:var(--display);font-size:clamp(32px,9.5vw,48px);letter-spacing:.02em;line-height:1}
 .brand b{color:var(--yellow);display:block}
-.sub{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
-.badge{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);font-family:var(--display);font-size:20px;padding:12px 22px;border-radius:14px;animation:up .8s .9s both}
+.sub{font-size:clamp(14px,3.8vw,16px);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);font-family:var(--display);font-size:clamp(24px,7vw,32px);padding:16px 28px;border-radius:16px;animation:up .8s .9s both}
 .badge::before{content:"★";font-size:18px}
 @keyframes up{from{opacity:.0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
 /* Indicador de deslizar */
-.hint{position:absolute;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;align-items:center;gap:10px;z-index:3;font-size:13px;font-weight:600;color:var(--white);opacity:.9;background:none;border:0;cursor:pointer;font-family:inherit}
+.hint{position:absolute;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;align-items:center;gap:10px;z-index:3;font-size:clamp(15px,4.2vw,18px);font-weight:600;color:var(--white);opacity:.9;background:none;border:0;cursor:pointer;font-family:inherit}
 .hint .arr{display:flex}
-.hint .arr span{width:12px;height:12px;border-left:3px solid var(--yellow);border-bottom:3px solid var(--yellow);transform:rotate(-135deg);animation:chev 1.4s infinite;margin-left:-2px}
+.hint .arr span{width:16px;height:16px;border-left:3px solid var(--yellow);border-bottom:3px solid var(--yellow);transform:rotate(-135deg);animation:chev 1.4s infinite;margin-left:-2px}
 .hint .arr span:nth-child(2){animation-delay:.15s}.hint .arr span:nth-child(3){animation-delay:.3s}
 @keyframes chev{0%,100%{opacity:.2}50%{opacity:1}}
 
@@ -51,39 +54,39 @@ p{margin:0;line-height:1.5}
 .s-month .eyebrow{color:var(--ink);opacity:.7}
 .s-month h2{font-size:clamp(40px,12vw,72px)}
 .s-month h2 span{display:block;color:var(--navy);-webkit-text-stroke:0}
-.monthBig{font-family:var(--display);font-size:clamp(80px,26vw,170px);line-height:.8;color:var(--navy);letter-spacing:-.03em;margin-top:6px}
+.monthBig{font-family:var(--display);font-size:80px;line-height:.9;color:var(--navy);letter-spacing:-.02em;margin-top:6px;white-space:nowrap;display:inline-block}
 .list{display:flex;flex-direction:column;gap:10px}
-.item{display:flex;align-items:center;gap:14px;background:var(--navy);color:var(--white);border-radius:16px;padding:14px 16px;border:0;font:inherit;text-align:left;cursor:pointer;width:100%}
-.item .ic{flex:0 0 44px;height:44px;border-radius:12px;background:var(--yellow);color:var(--ink);font-family:var(--display);display:grid;place-items:center;font-size:15px}
-.item b{display:block;font-size:15px}.item small{color:var(--muted);font-size:12px}
-.item .go{margin-left:auto;color:var(--yellow);font-size:20px}
-.terms{font-size:11px;line-height:1.5;color:rgba(11,18,32,.72);border-top:1px solid rgba(11,18,32,.2);padding-top:12px}
-.terms strong{display:block;text-transform:uppercase;letter-spacing:.12em;font-size:10px;margin-bottom:4px;color:var(--ink)}
+.item{display:flex;align-items:center;gap:16px;background:var(--navy);color:var(--white);border-radius:18px;padding:18px 18px;border:0;font:inherit;text-align:left;cursor:pointer;width:100%}
+.item .ic{flex:0 0 58px;height:58px;border-radius:14px;background:var(--yellow);color:var(--ink);font-family:var(--display);display:grid;place-items:center;font-size:19px}
+.item b{display:block;font-size:clamp(17px,4.8vw,20px)}.item small{color:var(--muted);font-size:clamp(14px,3.8vw,16px)}
+.item .go{margin-left:auto;color:var(--yellow);font-size:28px}
+.terms{font-size:clamp(13px,3.5vw,15px);line-height:1.5;color:rgba(11,18,32,.72);border-top:1px solid rgba(11,18,32,.2);padding-top:12px}
+.terms strong{display:block;text-transform:uppercase;letter-spacing:.12em;font-size:13px;margin-bottom:4px;color:var(--ink)}
 .s-month .hint{color:var(--ink)}
 .s-month .hint .arr span{border-color:var(--navy)}
 
 /* Pantalla 3: acumuladores */
 .s-bat{background:linear-gradient(160deg,var(--navy2),var(--navy) 60%)}
-.pct{font-family:var(--display);font-size:clamp(130px,42vw,240px);line-height:.8;color:var(--yellow);letter-spacing:-.04em;display:flex;align-items:flex-start}
+.pct{font-family:var(--display);font-size:clamp(170px,52vw,280px);line-height:.8;color:var(--yellow);letter-spacing:-.04em;display:flex;align-items:flex-start}
 .pct small{font-size:.42em;margin-top:.15em}
-.battery{width:150px;height:74px;border:5px solid var(--white);border-radius:12px;position:relative;padding:6px;display:flex;gap:5px}
-.battery::after{content:"";position:absolute;right:-14px;top:22px;width:9px;height:22px;background:var(--white);border-radius:0 4px 4px 0}
+.battery{width:180px;height:88px;border:5px solid var(--white);border-radius:12px;position:relative;padding:6px;display:flex;gap:5px}
+.battery::after{content:"";position:absolute;right:-15px;top:28px;width:10px;height:24px;background:var(--white);border-radius:0 4px 4px 0}
 .battery i{flex:1;background:var(--yellow);border-radius:3px;animation:charge 2.4s infinite}
 .battery i:nth-child(2){animation-delay:.3s}.battery i:nth-child(3){animation-delay:.6s}.battery i:nth-child(4){animation-delay:.9s}
 @keyframes charge{0%,15%{opacity:.15}40%,100%{opacity:1}}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-size:12px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid rgba(250,204,21,.4);color:var(--white)}
+.chip{font-size:clamp(14px,3.8vw,16px);font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid rgba(250,204,21,.4);color:var(--white)}
 
 /* Pantalla 4: Halloween puntos dobles */
 .s-hw{background:radial-gradient(90% 60% at 80% 10%,#5b1d0b,transparent 60%),linear-gradient(180deg,var(--purple),#0d0617)}
 .s-hw .eyebrow{color:var(--orange)}
-.x2{font-family:var(--display);font-size:clamp(120px,38vw,220px);line-height:.8;color:var(--orange);text-shadow:0 0 40px rgba(249,115,22,.55);letter-spacing:-.04em}
+.x2{font-family:var(--display);font-size:clamp(160px,48vw,260px);line-height:.8;color:var(--orange);text-shadow:0 0 40px rgba(249,115,22,.55);letter-spacing:-.04em}
 .pumpkin{position:absolute;right:-30px;top:8%;width:180px;height:150px;opacity:.9;z-index:1}
 .week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.day{aspect-ratio:1;max-width:100%;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:14px;background:rgba(255,255,255,.07);color:var(--muted);font-variant-numeric:tabular-nums}
+.day{aspect-ratio:1;max-width:100%;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:clamp(16px,4.5vw,20px);background:rgba(255,255,255,.07);color:var(--muted);font-variant-numeric:tabular-nums}
 .day.on{background:var(--orange);color:#1a0b02}
 .day.today{outline:2px solid var(--white);outline-offset:2px}
-.status{font-size:14px;font-weight:600;color:var(--white);background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.5);border-radius:12px;padding:10px 14px}
+.status{font-size:clamp(16px,4.4vw,18px);font-weight:600;color:var(--white);background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.5);border-radius:12px;padding:10px 14px}
 .bat{position:absolute;width:26px;height:12px;z-index:1;animation:fly 9s linear infinite;opacity:.6}
 @keyframes fly{from{transform:translate(-40px,0)}50%{transform:translate(50vw,-30px)}to{transform:translate(110vw,10px)}}
 
@@ -94,13 +97,14 @@ p{margin:0;line-height:1.5}
 
 /* Barra de progreso */
 .dots{position:fixed;left:0;right:0;bottom:calc(24px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:8px;z-index:10}
-.dots button{width:8px;height:8px;border-radius:999px;border:0;padding:0;background:rgba(255,255,255,.4);cursor:pointer;transition:width .3s,background .3s}
-.dots button.on{width:26px;background:var(--yellow)}
+.dots button{width:10px;height:10px;border-radius:999px;border:0;padding:0;background:rgba(255,255,255,.4);cursor:pointer;transition:width .3s,background .3s}
+.dots button.on{width:32px;background:var(--yellow)}
 .dots.dark button{background:rgba(0,21,41,.3)}.dots.dark button.on{background:var(--navy)}
 .nav{position:fixed;top:50%;z-index:10;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:var(--white);font-size:22px;cursor:pointer;display:none}
 .nav.l{left:calc(16px + env(safe-area-inset-left,0px))}.nav.r{right:calc(16px + env(safe-area-inset-right,0px))}
 @media (hover:hover) and (min-width:760px){.nav{display:block}}
 :focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.timer{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
@@ -193,7 +197,17 @@ document.getElementById('next').onclick=()=>go(cur()+1);
 function upd(){const i=cur();[...dots.children].forEach((d,n)=>d.classList.toggle('on',n===i));dots.classList.toggle('dark',i===1)}
 track.addEventListener('scroll',upd,{passive:true});upd();
 addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)});
-addEventListener('resize',()=>go(cur()));
+addEventListener('resize',()=>{go(cur());fitMonth()});
+
+// Ajustar el nombre del mes al ancho disponible
+function fitMonth(){const el=document.getElementById('monthName'),box=el.parentElement.clientWidth;el.style.fontSize='100px';const w=el.scrollWidth;el.style.fontSize=Math.min(170,Math.floor(100*box/w*0.98))+'px'}
+document.fonts&&document.fonts.ready.then(fitMonth);fitMonth();
+
+// Carrusel automático: avanza cada 5 s y se pausa 12 s cuando el cliente toca
+let paused=0;const pause=()=>{paused=Date.now()+12000};
+['touchstart','pointerdown','wheel','keydown'].forEach(ev=>addEventListener(ev,pause,{passive:true}));
+const bar=document.createElement('div');bar.className='timer';document.body.appendChild(bar);
+setInterval(()=>{if(Date.now()<paused||document.hidden)return;const i=cur();go(i>=screens.length-1?0:i+1)},5000);
 
 // Semana de puntos dobles: últimos 7 días del mes de octubre
 const y=2026,last=31,first=last-6;
