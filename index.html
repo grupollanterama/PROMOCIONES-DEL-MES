@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Promociones Llanterama</title>
@@ -5,6 +8,7 @@
 <meta name="theme-color" content="#001529">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
 <style>
+[hidden]{display:none!important}
 /* Layout: aviso de confidencialidad al entrar → pantallas completas en carrusel horizontal (portada, bienvenida, promos del mes, promos individuales) */
 :root{
   --navy:#001529; --navy2:#0a2540; --navy3:#12355c; --navy4:#1d4b80;
@@ -158,6 +162,8 @@ p{margin:0;line-height:1.45}
 :focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
+</head>
+<body>
 
 <main class="track" id="track">
 
@@ -184,58 +190,14 @@ p{margin:0;line-height:1.45}
     <div class="inner">
       <div class="eyebrow">Bienvenido</div>
       <h2>Tu portal <span>Cliente Frecuente</span></h2>
-      <p class="lead">Aquí encontrarás cada mes las promociones y descuentos exclusivos para ti. Este mes te tenemos preparado lo de <b style="color:var(--white)" class="mesTxt">noviembre</b>.</p>
+      <p class="lead">Aquí encontrarás cada mes las promociones y descuentos exclusivos para ti. Muy pronto verás aquí las promociones de <b style="color:var(--white)" class="mesTxt">noviembre</b>.</p>
       <div class="feats">
         <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span><span><b>Descuentos del mes</b><small>Precios especiales solo para miembros</small></span></div>
         <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><span><b>Puntos y beneficios</b><small>Acumula con cada compra en sucursal</small></span></div>
         <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><b>Se actualiza cada mes</b><small>Vuelve a escanear tu tarjeta para ver lo nuevo</small></span></div>
       </div>
     </div>
-    <button class="hint" data-go="2">Ver promociones <span class="arr"><span></span><span></span><span></span></span></button>
-  </section>
-
-  <!-- 3. Promociones del mes -->
-  <section class="screen s-month" aria-label="Promociones del mes">
-    <div class="inner">
-      <div>
-        <div class="eyebrow">Promociones del mes</div>
-        <div class="monthBig" id="monthName">Noviembre</div>
-      </div>
-      <div class="list">
-        <button class="item" data-go="3"><span class="ic">+5%</span><span><b>5% adicional en acumuladores</b><small>Todas las marcas</small></span><span class="go">›</span></button>
-        <button class="item" data-go="4"><span class="ic">×2</span><span><b>Puntos al doble</b><small>Última semana del mes</small></span><span class="go">›</span></button>
-      </div>
-      <div class="terms">
-        <strong>Términos y condiciones</strong>
-        Descuentos no acumulables entre sí ni con otras promociones. Descuentos válidos únicamente durante el mes en curso. Aplica en sucursales participantes de Grupo Llanterama presentando tu tarjeta Cliente Frecuente. Sujeto a disponibilidad.
-      </div>
-    </div>
-    <button class="hint" data-go="3">Desliza <span class="arr"><span></span><span></span><span></span></span></button>
-  </section>
-
-  <!-- 4. Acumuladores -->
-  <section class="screen s-bat" aria-label="Descuento en acumuladores">
-    <div class="inner">
-      <div class="eyebrow">Descuento adicional</div>
-      <div class="battery" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="pct">5<small>%</small></div>
-      <h2>en todos los acumuladores</h2>
-      <p class="lead">Adicional al precio de tu tarjeta Cliente Frecuente.</p>
-      <div class="chips"><span class="tag">Todas las medidas</span><span class="tag">Instalación en sucursal</span></div>
-    </div>
-    <button class="hint" data-go="4">Desliza <span class="arr"><span></span><span></span><span></span></span></button>
-  </section>
-
-  <!-- 5. Puntos dobles -->
-  <section class="screen s-x2" aria-label="Puntos dobles">
-    <div class="inner">
-      <div class="eyebrow">Cierre de mes</div>
-      <div class="x2">×2</div>
-      <h2>Tus puntos valen al doble</h2>
-      <p class="lead">En la última semana de <span class="mesTxt">noviembre</span>, cada compra con tu tarjeta Cliente Frecuente acumula el doble de puntos.</p>
-      <div class="week" id="week" aria-label="Días con puntos dobles"></div>
-      <div class="status" id="x2Status"></div>
-    </div>
+    
   </section>
 
 </main>
@@ -277,16 +239,15 @@ p{margin:0;line-height:1.45}
 const track=document.getElementById('track'),screens=[...track.children],dots=document.getElementById('dots');
 const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const now=new Date(),mes=MESES[now.getMonth()],Mes=mes[0].toUpperCase()+mes.slice(1);
-document.getElementById('monthName').textContent=Mes;
 document.querySelectorAll('.mesTxt').forEach(e=>e.textContent=mes);
 
 // Aviso de confidencialidad (se pide una vez por mes en cada celular)
 const gate=document.getElementById('gate'),bye=document.getElementById('bye'),agree=document.getElementById('agree'),accept=document.getElementById('accept');
 const KEY='llt-aviso-'+now.getFullYear()+'-'+now.getMonth();
-let accepted=false;try{accepted=localStorage.getItem(KEY)==='1'}catch(e){}
-gate.hidden=accepted;
+let accepted=false;
+gate.hidden=false;
 agree.addEventListener('change',()=>accept.disabled=!agree.checked);
-accept.onclick=()=>{try{localStorage.setItem(KEY,'1')}catch(e){};gate.hidden=true;accepted=true;paused=Date.now()+3000};
+accept.onclick=()=>{gate.hidden=true;accepted=true;paused=Date.now()+3000};
 document.getElementById('decline').onclick=()=>{gate.hidden=true;bye.hidden=false};
 document.getElementById('back').onclick=()=>{bye.hidden=true;gate.hidden=false};
 
@@ -297,24 +258,16 @@ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=
 const cur=()=>Math.round(track.scrollLeft/track.clientWidth);
 document.getElementById('prev').onclick=()=>go(cur()-1);
 document.getElementById('next').onclick=()=>go(cur()+1);
-function upd(){const i=cur();[...dots.children].forEach((d,n)=>d.classList.toggle('on',n===i));dots.classList.toggle('dark',i===2)}
+function upd(){const i=cur();[...dots.children].forEach((d,n)=>d.classList.toggle('on',n===i));}
 track.addEventListener('scroll',upd,{passive:true});upd();
 addEventListener('keydown',e=>{if(!gate.hidden)return;if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)});
-addEventListener('resize',()=>{go(cur());fitMonth()});
-
-// Ajustar el nombre del mes al ancho disponible
-function fitMonth(){const el=document.getElementById('monthName'),box=el.parentElement.clientWidth;el.style.fontSize='100px';const w=el.scrollWidth;el.style.fontSize=Math.min(170,Math.floor(100*box/w*0.98))+'px'}
-document.fonts&&document.fonts.ready.then(fitMonth);fitMonth();
+addEventListener('resize',()=>go(cur()));
 
 // Carrusel automático: cada 5 s; se pausa 12 s al tocar; no corre con el aviso abierto
 let paused=0;const pause=()=>{paused=Date.now()+12000};
 ['touchstart','pointerdown','wheel'].forEach(ev=>track.addEventListener(ev,pause,{passive:true}));
 setInterval(()=>{if(!accepted||!gate.hidden||Date.now()<paused||document.hidden)return;const i=cur();go(i>=screens.length-1?0:i+1)},5000);
 
-// Puntos dobles: últimos 7 días del mes en curso
-const y=now.getFullYear(),m=now.getMonth(),last=new Date(y,m+1,0).getDate(),first=last-6;
-const week=document.getElementById('week');
-for(let d=first;d<=last;d++){const el=document.createElement('div');el.className='day';el.textContent=d;if(now.getDate()===d)el.classList.add('today');week.appendChild(el)}
-const st=document.getElementById('x2Status'),start=new Date(y,m,first);
-st.textContent=now<start?`Del ${first} al ${last} de ${mes}. Faltan ${Math.ceil((start-now)/864e5)} días.`:`Activo hoy · Termina el ${last} de ${mes}`;
 </script>
+</body>
+</html>
